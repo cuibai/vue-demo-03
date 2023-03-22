@@ -1,19 +1,15 @@
 <template>
-  <div>
-    <p>分数:{{ scoreList }}</p>
-    <p>优秀:{{ betterList }}</p>
-  </div>
+<Child ref="childref"></Child>
+<button @click="fn">获取组件实例</button>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-const scoreList = ref([80, 100, 90, 70, 60])
-// 计算属性
-const betterList = computed(() => scoreList.value.filter((item) => item > 90))
-// 改变数据结构 计算树型
-setTimeout(() => {
-    scoreList.value.push(92,66)
-},300)
+import Child from './components/Child.vue'
+import {ref} from 'vue'
+const childref = ref(null)
+const fn = () => {
+    console.log(childref.value)
+}
 </script>
 
 <style>
