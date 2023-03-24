@@ -1,17 +1,16 @@
 <template>
-<Child ref="childref"></Child>
-<button @click="fn">获取组件实例</button>
+  <div class="app">
+    app
+    <hr style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" width="80%" color=#987cb9 SIZE=3>
+  </div>
 </template>
 
-<script setup>
-import Child from './components/Child.vue'
-import {ref} from 'vue'
-const childref = ref(null)
-const fn = () => {
-    console.log(childref.value)
+<script>
+export default {
+
 }
 </script>
 
-<style>
+<style >
 
 </style>
